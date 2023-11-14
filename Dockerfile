@@ -12,6 +12,5 @@ FROM alpine:latest
 COPY --from=builder /usr/bin/sshtron /usr/bin/
 RUN apk add --update openssh-client && \
     ssh-keygen -t rsa -N "" -f id_rsa
-EXPOSE 2022 3000
-CMD ["echo", "test"]
+EXPOSE 2022
 ENTRYPOINT sshtron
